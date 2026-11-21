@@ -1,0 +1,65 @@
+:root {
+  color-scheme: dark;
+  --canvas: #101c19;
+  --surface: #1a2b25;
+  --foreground: #edf5ef;
+  --muted: #b4c7bc;
+  --accent: #71e6b5;
+  --accent-ink: #10251b;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--foreground);
+  background: var(--canvas);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: radial-gradient(ellipse at 90% 5%, #23423788, transparent 45%), var(--canvas);
+}
+a { color: inherit; text-underline-offset: 0.25em; }
+a:focus-visible { outline: 3px solid var(--accent); outline-offset: 6px; }
+.page { width: min(100% - 3rem, 68rem); margin-inline: auto; }
+.header { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: 2rem; }
+.brand { display: inline-flex; align-items: center; gap: 0.65rem; text-decoration: none; font-weight: 750; font-size: 1.6rem; letter-spacing: -0.06em; }
+.brand img { display: block; border-radius: 0.6rem; }
+.status { display: flex; align-items: center; gap: 0.5rem; color: var(--muted); font-size: 0.85rem; }
+.status span { width: 0.4rem; height: 0.4rem; border-radius: 50%; background: var(--accent); }
+.hero { padding-block: clamp(4rem, 10vw, 8rem) 5rem; max-width: 54rem; }
+.eyebrow { margin: 0 0 1.2rem; color: var(--accent); font-weight: 650; font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; }
+h1 { margin: 0; font-size: clamp(2.8rem, 7.4vw, 5.6rem); font-weight: 650; line-height: 1.04; letter-spacing: -0.065em; }
+.intro { max-width: 36rem; margin: 1.8rem 0 2.2rem; color: var(--muted); font-size: clamp(1.1rem, 2vw, 1.25rem); line-height: 1.7; }
+.button { display: inline-flex; gap: 2rem; align-items: center; padding: 0.95rem 1.25rem; border-radius: 0.8rem; background: var(--accent); color: var(--accent-ink); font-weight: 700; text-decoration: none; }
+.button:hover { background: #a2f1cf; }
+.project { padding-block: 2rem 4rem; scroll-margin-top: 2rem; }
+.section-heading { max-width: 40rem; }
+h2 { margin: 0 0 1rem; font-size: clamp(1.65rem, 3vw, 2.25rem); font-weight: 650; line-height: 1.2; letter-spacing: -0.04em; }
+p { line-height: 1.75; }
+.section-heading > p:last-child, .feature p, .integration > p { color: var(--muted); }
+.features { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; margin-top: 2rem; }
+.feature { padding: 2rem; border-radius: 1.25rem; background: var(--surface); }
+.number { color: var(--accent); font-size: 0.85rem; font-variant-numeric: tabular-nums; }
+h3 { margin: 1.6rem 0 0.65rem; font-size: 1.2rem; font-weight: 650; letter-spacing: -0.025em; }
+.feature p { margin: 0; }
+.integration { padding: clamp(1.5rem, 4vw, 2.5rem); border-radius: 1.25rem; background: #20372c; }
+.integration-heading { max-width: 40rem; }
+.label { display: inline-block; padding: 0.3rem 0.65rem; margin-bottom: 1rem; border-radius: 0.5rem; background: #365641; color: #ddf5df; font-size: 0.78rem; font-weight: 650; }
+.integration > p { max-width: 49rem; margin-bottom: 0; }
+.integration .fine-print { font-size: 0.85rem; }
+footer { padding-block: 3rem 2rem; font-size: 0.8rem; color: var(--muted); }
+.footer-top { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.footer-brand { font-size: 1.2rem; font-weight: 750; color: var(--foreground); letter-spacing: -0.06em; }
+footer p { max-width: 54rem; margin: 1rem 0 0; }
+.skip-link { position: absolute; top: 0.75rem; left: 0.75rem; padding: 0.75rem 1rem; background: var(--accent); color: var(--accent-ink); border-radius: 0.5rem; transform: translateY(-200%); z-index: 1; }
+.skip-link:focus { transform: translateY(0); }
+@media (max-width: 40rem) {
+  .page { width: calc(100% - 2.5rem); }
+  .header { padding-block: 1.5rem; }
+  .status { font-size: 0.75rem; }
+  .brand { font-size: 1.4rem; }
+  .hero { padding-block: 3.5rem; }
+  .features { grid-template-columns: 1fr; }
+  .feature { padding: 1.5rem; }
+  .footer-top { align-items: flex-start; flex-direction: column; gap: 0.5rem; }
+}
